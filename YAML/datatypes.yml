@@ -1,0 +1,51 @@
+#string vairables
+myself: Mohit Kumar 
+fruit: "Banana"
+job: 'Web'
+
+#Multi line strings
+bio : |
+My name is mOhit kumar dubey,
+I am 21yrs old.
+
+#Write a single line in multiple line
+message : >
+Hello
+World
+this 
+will be
+treated as 
+single line.
+#integer
+number : 597
+#float
+marks: 98.76
+#boolean
+booleanValue: !!bool No  #n,N,false,FALSE,False same for true,TRUE,yes,Y
+
+#specify the data type
+zero : !!int 0
+posnum: !!int 45
+negnum: !!int -45
+binaryNum: !!int 0b11001
+octalNum: !!int 0657
+hexa: !!int 0x45
+commaValues: !int +540_000
+exponential Numbers: 6.023e56
+
+#floating point number
+
+marks: !!float 98.56
+infinites: !!float .infinity
+not a num: .nan
+
+#null
+
+surname: !!null Null #or null Null ~
+~ : this is a null key
+
+#date time
+
+date: !!timestamp 2023-03-12
+india time: 2023-03-12T22:45:36.10 +5:30
+no time zone: 2023-03-12T22:45:36.10

@@ -1,0 +1,23 @@
+"apple" : "i am a red fruit"
+1:"This is mohit rol number"
+---
+#list
+-apple
+-mango
+-banana
+-Apple  #YAML is case sensitive
+---  #used to indicate different files
+cities:
+ - new Delhi
+ - Ambala
+ - Mumbai
+---
+cities : [new Delhi,mumbai]
+
+---
+
+{mango: "yellow fruit", age: 56}
+
+... #End of Document
+
+#YAML DOES NOT PROVIDE MULTI LINE COMMENTS
