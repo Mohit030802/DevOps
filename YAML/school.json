@@ -1,11 +1,15 @@
 {
-    "School": {
-      "Students": {
-        "Student": {
-          "rno": 161,
-          "name": "Mohit",
-          "marks": 93
+  "School": [
+    {
+      "name": "KVS",
+      "principal": "s1",
+      "students": [
+        {
+          "rno": "161",
+          "name": "mohit",
+          "marks": "93"
         }
-      }
+      ]
     }
-  }
+  ]
+}
