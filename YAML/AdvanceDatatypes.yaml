@@ -60,3 +60,15 @@ people: !!omap
     age: 21
     weight: 87
 
+#re using some properties using anchors
+likings: &likes
+  favorite fruit: Mango
+  favorite game: cricket
+person1:
+  name: Mohit
+  age: 20
+  <<: *likes 
+
+person2:
+  name: Om
+  <<: *likes 
