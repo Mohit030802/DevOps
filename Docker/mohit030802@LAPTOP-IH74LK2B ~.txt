@@ -1,0 +1,430 @@
+Windows Subsystem for Linux is now available in the Microsoft Store!
+You can upgrade by running 'wsl.exe --update' or by visiting https://aka.ms/wslstorepage
+Installing WSL from the Microsoft Store will give you the latest WSL updates, faster.
+For more information please visit https://aka.ms/wslstoreinfo
+
+Welcome to Ubuntu 22.04.1 LTS (GNU/Linux 5.10.16.3-microsoft-standard-WSL2 x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+This message is shown once a day. To disable it please create the
+/home/mohit030802/.hushlogin file.
+mohit030802@LAPTOP-IH74LK2B:~$   docker run hello-world
+
+Hello from Docker!
+This message shows that your installation appears to be working correctly.
+
+To generate this message, Docker took the following steps:
+ 1. The Docker client contacted the Docker daemon.
+ 2. The Docker daemon pulled the "hello-world" image from the Docker Hub.
+    (amd64)
+ 3. The Docker daemon created a new container from that image which runs the
+    executable that produces the output you are currently reading.
+ 4. The Docker daemon streamed that output to the Docker client, which sent it
+    to your terminal.
+
+To try something more ambitious, you can run an Ubuntu container with:
+ $ docker run -it ubuntu bash
+
+Share images, automate workflows, and more with a free Docker ID:
+ https://hub.docker.com/
+
+For more examples and ideas, visit:
+ https://docs.docker.com/get-started/
+
+mohit030802@LAPTOP-IH74LK2B:~$ docker run -it ubuntu
+Unable to find image 'ubuntu:latest' locally
+latest: Pulling from library/ubuntu
+76769433fd8a: Pull complete
+Digest: sha256:2adf22367284330af9f832ffefb717c78239f6251d9d0f58de50b86229ed1427
+Status: Downloaded newer image for ubuntu:latest
+root@ffb23add6c8f:/# exit
+exit
+mohit030802@LAPTOP-IH74LK2B:~$ docker images
+REPOSITORY    TAG       IMAGE ID       CREATED         SIZE
+ubuntu        latest    74f2314a03de   2 weeks ago     77.8MB
+hello-world   latest    feb5d9fea6a5   17 months ago   13.3kB
+myimage       latest    66fab739cecb   18 months ago   135MB
+ubuntu        16.04     b6f507652425   18 months ago   135MB
+mohit030802@LAPTOP-IH74LK2B:~$ docker run -it ubuntu
+root@168f934aa16f:/# exit
+exit
+mohit030802@LAPTOP-IH74LK2B:~$ docker pull mysql
+Using default tag: latest
+latest: Pulling from library/mysql
+767a87c58327: Pull complete
+cbd6d17e71a0: Pull complete
+9b17ad003fbc: Pull complete
+410b54c19b6b: Pull complete
+c6192cec9415: Pull complete
+f7be351756ff: Pull complete
+ae2d1ab519ee: Pull complete
+119cfaa7dea0: Pull complete
+7176b3cc6ba1: Pull complete
+2eb39e909e2b: Pull complete
+e935886e1025: Pull complete
+Digest: sha256:2596158f73606ba571e1af29a9c32bec5dc021a2495e4a70d194a9b49664f4d9
+Status: Downloaded newer image for mysql:latest
+docker.io/library/mysql:latest
+mohit030802@LAPTOP-IH74LK2B:~$ docker images
+REPOSITORY    TAG       IMAGE ID       CREATED         SIZE
+mysql         latest    4073e6a6f542   6 days ago      530MB
+ubuntu        latest    74f2314a03de   2 weeks ago     77.8MB
+hello-world   latest    feb5d9fea6a5   17 months ago   13.3kB
+myimage       latest    66fab739cecb   18 months ago   135MB
+ubuntu        16.04     b6f507652425   18 months ago   135MB
+mohit030802@LAPTOP-IH74LK2B:~$ ps aux
+USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root         1  0.0  0.0   1880  1236 ?        Sl   13:35   0:00 /init
+root       124  0.0  0.0   1824    68 ?        Ss   13:35   0:00 /init
+root       125  0.0  0.0   1824    88 ?        S    13:35   0:00 /init
+root       126  0.0  0.7 730700 27788 pts/0    Ssl+ 13:35   0:01 /mnt/wsl/docker-desktop/docker-desktop-user-distro proxy --distro-name Ubuntu --docker-desk
+root       139  0.0  0.0   1824    92 ?        S    13:35   0:00 /init
+mohit03+   140  0.0  1.1 759464 44744 pts/1    Ssl+ 13:35   0:00 docker serve --address unix:///home/mohit030802/.docker/run/docker-cli-api.sock
+root       152  0.0  0.0   2176   356 ?        Ss   13:35   0:00 /init
+root       153  0.0  0.0   2176   368 ?        S    13:35   0:00 /init
+mohit03+   154  0.0  0.1   6164  5128 pts/2    Ss   13:35   0:00 -bash
+mohit03+   868  0.0  0.0   7476  3216 pts/2    R+   14:05   0:00 ps aux
+mohit030802@LAPTOP-IH74LK2B:~$ docker ps
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+mohit030802@LAPTOP-IH74LK2B:~$  docker container ls
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+mohit030802@LAPTOP-IH74LK2B:~$ docker run -it ubuntu
+root@fe2eec102fd0:/# exit
+exit
+mohit030802@LAPTOP-IH74LK2B:~$ docker ps
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+mohit030802@LAPTOP-IH74LK2B:~$ docker run -it mysql
+2023-03-15 08:38:10+00:00 [Note] [Entrypoint]: Entrypoint script for MySQL Server 8.0.32-1.el8 started.
+2023-03-15 08:38:11+00:00 [Note] [Entrypoint]: Switching to dedicated user 'mysql'
+2023-03-15 08:38:11+00:00 [Note] [Entrypoint]: Entrypoint script for MySQL Server 8.0.32-1.el8 started.
+2023-03-15 08:38:11+00:00 [ERROR] [Entrypoint]: Database is uninitialized and password option is not specified
+    You need to specify one of the following as an environment variable:
+    - MYSQL_ROOT_PASSWORD
+    - MYSQL_ALLOW_EMPTY_PASSWORD
+    - MYSQL_RANDOM_ROOT_PASSWORD
+mohit030802@LAPTOP-IH74LK2B:~$ docker run -it ubuntu
+root@573aec86736b:/# exit
+exit
+mohit030802@LAPTOP-IH74LK2B:~$ docker run mongo
+Unable to find image 'mongo:latest' locally
+latest: Pulling from library/mongo
+b65bcf19d144: Pull complete
+83449d568304: Pull complete
+20d982b8a1de: Pull complete
+40b500d3ec7f: Pull complete
+e040b873b6d4: Pull complete
+96629844a56c: Pull complete
+cf5ae0a54c6d: Pull complete
+1fd08fb20faf: Pull complete
+39e93bf7666c: Pull complete
+Digest: sha256:a4f2db6f54aeabba562cd07e5cb758b55d6192dcc6f36322a334ba0b0120aaf1
+Status: Downloaded newer image for mongo:latest
+{"t":{"$date":"2023-03-15T08:44:29.842+00:00"},"s":"I",  "c":"NETWORK",  "id":4915701, "ctx":"-","msg":"Initialized wire specification","attr":{"spec":{"incomingExternalClient":{"minWireVersion":0,"maxWireVersion":17},"incomingInternalClient":{"minWireVersion":0,"maxWireVersion":17},"outgoing":{"minWireVersion":6,"maxWireVersion":17},"isInternalClient":true}}}
+{"t":{"$date":"2023-03-15T08:44:29.845+00:00"},"s":"I",  "c":"CONTROL",  "id":23285,   "ctx":"main","msg":"Automatically disabling TLS 1.0, to force-enableTLS 1.0 specify --sslDisabledProtocols 'none'"}
+{"t":{"$date":"2023-03-15T08:44:29.845+00:00"},"s":"I",  "c":"NETWORK",  "id":4648601, "ctx":"main","msg":"Implicit TCP FastOpen unavailable. If TCP FastOpen is required, set tcpFastOpenServer, tcpFastOpenClient, and tcpFastOpenQueueSize."}
+{"t":{"$date":"2023-03-15T08:44:29.847+00:00"},"s":"I",  "c":"REPL",     "id":5123008, "ctx":"main","msg":"Successfully registered PrimaryOnlyService","attr":{"service":"TenantMigrationDonorService","namespace":"config.tenantMigrationDonors"}}
+{"t":{"$date":"2023-03-15T08:44:29.847+00:00"},"s":"I",  "c":"REPL",     "id":5123008, "ctx":"main","msg":"Successfully registered PrimaryOnlyService","attr":{"service":"TenantMigrationRecipientService","namespace":"config.tenantMigrationRecipients"}}
+{"t":{"$date":"2023-03-15T08:44:29.847+00:00"},"s":"I",  "c":"REPL",     "id":5123008, "ctx":"main","msg":"Successfully registered PrimaryOnlyService","attr":{"service":"ShardSplitDonorService","namespace":"config.tenantSplitDonors"}}
+{"t":{"$date":"2023-03-15T08:44:29.847+00:00"},"s":"I",  "c":"CONTROL",  "id":5945603, "ctx":"main","msg":"Multi threading initialized"}
+{"t":{"$date":"2023-03-15T08:44:29.848+00:00"},"s":"I",  "c":"CONTROL",  "id":4615611, "ctx":"initandlisten","msg":"MongoDB starting","attr":{"pid":1,"port":27017,"dbPath":"/data/db","architecture":"64-bit","host":"37df8436b68a"}}
+{"t":{"$date":"2023-03-15T08:44:29.848+00:00"},"s":"I",  "c":"CONTROL",  "id":23403,   "ctx":"initandlisten","msg":"Build Info","attr":{"buildInfo":{"version":"6.0.4","gitVersion":"44ff59461c1353638a71e710f385a566bcd2f547","openSSLVersion":"OpenSSL 3.0.2 15 Mar 2022","modules":[],"allocator":"tcmalloc","environment":{"distmod":"ubuntu2204","distarch":"x86_64","target_arch":"x86_64"}}}}
+{"t":{"$date":"2023-03-15T08:44:29.848+00:00"},"s":"I",  "c":"CONTROL",  "id":51765,   "ctx":"initandlisten","msg":"Operating System","attr":{"os":{"name":"Ubuntu","version":"22.04"}}}
+{"t":{"$date":"2023-03-15T08:44:29.848+00:00"},"s":"I",  "c":"CONTROL",  "id":21951,   "ctx":"initandlisten","msg":"Options set by command line","attr":{"options":{"net":{"bindIp":"*"}}}}
+{"t":{"$date":"2023-03-15T08:44:29.850+00:00"},"s":"I",  "c":"STORAGE",  "id":22297,   "ctx":"initandlisten","msg":"Using the XFS filesystem is strongly recommended with the WiredTiger storage engine. See http://dochub.mongodb.org/core/prodnotes-filesystem","tags":["startupWarnings"]}
+{"t":{"$date":"2023-03-15T08:44:29.850+00:00"},"s":"I",  "c":"STORAGE",  "id":22315,   "ctx":"initandlisten","msg":"Opening WiredTiger","attr":{"config":"create,cache_size=1410M,session_max=33000,eviction=(threads_min=4,threads_max=4),config_base=false,statistics=(fast),log=(enabled=true,remove=true,path=journal,compressor=snappy),builtin_extension_config=(zstd=(compression_level=6)),file_manager=(close_idle_time=600,close_scan_interval=10,close_handle_minimum=2000),statistics_log=(wait=0),json_output=(error,message),verbose=[recovery_progress:1,checkpoint_progress:1,compact_progress:1,backup:0,checkpoint:0,compact:0,evict:0,history_store:0,recovery:0,rts:0,salvage:0,tiered:0,timestamp:0,transaction:0,verify:0,log:0],"}}
+{"t":{"$date":"2023-03-15T08:44:30.434+00:00"},"s":"I",  "c":"STORAGE",  "id":4795906, "ctx":"initandlisten","msg":"WiredTiger opened","attr":{"durationMillis":584}}
+{"t":{"$date":"2023-03-15T08:44:30.434+00:00"},"s":"I",  "c":"RECOVERY", "id":23987,   "ctx":"initandlisten","msg":"WiredTiger recoveryTimestamp","attr":{"recoveryTimestamp":{"$timestamp":{"t":0,"i":0}}}}
+{"t":{"$date":"2023-03-15T08:44:30.451+00:00"},"s":"W",  "c":"CONTROL",  "id":22120,   "ctx":"initandlisten","msg":"Access control is not enabled for the database. Read and write access to data and configuration is unrestricted","tags":["startupWarnings"]}
+{"t":{"$date":"2023-03-15T08:44:30.452+00:00"},"s":"W",  "c":"CONTROL",  "id":22178,   "ctx":"initandlisten","msg":"/sys/kernel/mm/transparent_hugepage/enabled is 'always'. We suggest setting it to 'never'","tags":["startupWarnings"]}
+{"t":{"$date":"2023-03-15T08:44:30.452+00:00"},"s":"W",  "c":"CONTROL",  "id":5123300, "ctx":"initandlisten","msg":"vm.max_map_count is too low","attr":{"currentValue":65530,"recommendedMinimum":1677720,"maxConns":838860},"tags":["startupWarnings"]}
+{"t":{"$date":"2023-03-15T08:44:30.452+00:00"},"s":"I",  "c":"STORAGE",  "id":20320,   "ctx":"initandlisten","msg":"createCollection","attr":{"namespace":"admin.system.version","uuidDisposition":"provided","uuid":{"uuid":{"$uuid":"5f0b607a-2511-420c-8a63-ee9992d3b724"}},"options":{"uuid":{"$uuid":"5f0b607a-2511-420c-8a63-ee9992d3b724"}}}}
+{"t":{"$date":"2023-03-15T08:44:30.463+00:00"},"s":"I",  "c":"INDEX",    "id":20345,   "ctx":"initandlisten","msg":"Index build: done building","attr":{"buildUUID":null,"collectionUUID":{"uuid":{"$uuid":"5f0b607a-2511-420c-8a63-ee9992d3b724"}},"namespace":"admin.system.version","index":"_id_","ident":"index-1-6500416988991402873","collectionIdent":"collection-0-6500416988991402873","commitTimestamp":null}}
+{"t":{"$date":"2023-03-15T08:44:30.464+00:00"},"s":"I",  "c":"REPL",     "id":20459,   "ctx":"initandlisten","msg":"Setting featureCompatibilityVersion","attr":{"newVersion":"6.0"}}
+{"t":{"$date":"2023-03-15T08:44:30.464+00:00"},"s":"I",  "c":"REPL",     "id":5853300, "ctx":"initandlisten","msg":"current featureCompatibilityVersion value","attr":{"featureCompatibilityVersion":"6.0","context":"setFCV"}}
+{"t":{"$date":"2023-03-15T08:44:30.464+00:00"},"s":"I",  "c":"NETWORK",  "id":4915702, "ctx":"initandlisten","msg":"Updated wire specification","attr":{"oldSpec":{"incomingExternalClient":{"minWireVersion":0,"maxWireVersion":17},"incomingInternalClient":{"minWireVersion":0,"maxWireVersion":17},"outgoing":{"minWireVersion":6,"maxWireVersion":17},"isInternalClient":true},"newSpec":{"incomingExternalClient":{"minWireVersion":0,"maxWireVersion":17},"incomingInternalClient":{"minWireVersion":17,"maxWireVersion":17},"outgoing":{"minWireVersion":17,"maxWireVersion":17},"isInternalClient":true}}}
+{"t":{"$date":"2023-03-15T08:44:30.464+00:00"},"s":"I",  "c":"NETWORK",  "id":4915702, "ctx":"initandlisten","msg":"Updated wire specification","attr":{"oldSpec":{"incomingExternalClient":{"minWireVersion":0,"maxWireVersion":17},"incomingInternalClient":{"minWireVersion":17,"maxWireVersion":17},"outgoing":{"minWireVersion":17,"maxWireVersion":17},"isInternalClient":true},"newSpec":{"incomingExternalClient":{"minWireVersion":0,"maxWireVersion":17},"incomingInternalClient":{"minWireVersion":17,"maxWireVersion":17},"outgoing":{"minWireVersion":17,"maxWireVersion":17},"isInternalClient":true}}}
+{"t":{"$date":"2023-03-15T08:44:30.464+00:00"},"s":"I",  "c":"REPL",     "id":5853300, "ctx":"initandlisten","msg":"current featureCompatibilityVersion value","attr":{"featureCompatibilityVersion":"6.0","context":"startup"}}
+{"t":{"$date":"2023-03-15T08:44:30.464+00:00"},"s":"I",  "c":"STORAGE",  "id":5071100, "ctx":"initandlisten","msg":"Clearing temp directory"}
+{"t":{"$date":"2023-03-15T08:44:30.464+00:00"},"s":"I",  "c":"CONTROL",  "id":20536,   "ctx":"initandlisten","msg":"Flow Control is enabled on this deployment"}
+{"t":{"$date":"2023-03-15T08:44:30.473+00:00"},"s":"I",  "c":"FTDC",     "id":20625,   "ctx":"initandlisten","msg":"Initializing full-time diagnostic data capture","attr":{"dataDirectory":"/data/db/diagnostic.data"}}
+{"t":{"$date":"2023-03-15T08:44:30.474+00:00"},"s":"I",  "c":"STORAGE",  "id":20320,   "ctx":"initandlisten","msg":"createCollection","attr":{"namespace":"local.startup_log","uuidDisposition":"generated","uuid":{"uuid":{"$uuid":"8f0ed7ec-8d47-46ba-8416-ca1e84c5c34f"}},"options":{"capped":true,"size":10485760}}}
+{"t":{"$date":"2023-03-15T08:44:30.482+00:00"},"s":"I",  "c":"INDEX",    "id":20345,   "ctx":"initandlisten","msg":"Index build: done building","attr":{"buildUUID":null,"collectionUUID":{"uuid":{"$uuid":"8f0ed7ec-8d47-46ba-8416-ca1e84c5c34f"}},"namespace":"local.startup_log","index":"_id_","ident":"index-3-6500416988991402873","collectionIdent":"collection-2-6500416988991402873","commitTimestamp":null}}
+{"t":{"$date":"2023-03-15T08:44:30.483+00:00"},"s":"I",  "c":"REPL",     "id":6015317, "ctx":"initandlisten","msg":"Setting new configuration state","attr":{"newState":"ConfigReplicationDisabled","oldState":"ConfigPreStart"}}
+{"t":{"$date":"2023-03-15T08:44:30.483+00:00"},"s":"I",  "c":"STORAGE",  "id":22262,   "ctx":"initandlisten","msg":"Timestamp monitor starting"}
+{"t":{"$date":"2023-03-15T08:44:30.484+00:00"},"s":"I",  "c":"CONTROL",  "id":20712,   "ctx":"LogicalSessionCacheReap","msg":"Sessions collection is not set up; waiting until next sessions reap interval","attr":{"error":"NamespaceNotFound: config.system.sessions does not exist"}}
+{"t":{"$date":"2023-03-15T08:44:30.485+00:00"},"s":"I",  "c":"NETWORK",  "id":23015,   "ctx":"listener","msg":"Listening on","attr":{"address":"/tmp/mongodb-27017.sock"}}
+{"t":{"$date":"2023-03-15T08:44:30.485+00:00"},"s":"I",  "c":"NETWORK",  "id":23015,   "ctx":"listener","msg":"Listening on","attr":{"address":"0.0.0.0"}}
+{"t":{"$date":"2023-03-15T08:44:30.485+00:00"},"s":"I",  "c":"STORAGE",  "id":20320,   "ctx":"LogicalSessionCacheRefresh","msg":"createCollection","attr":{"namespace":"config.system.sessions","uuidDisposition":"generated","uuid":{"uuid":{"$uuid":"069f8303-eb52-4db9-a5a7-3383e8b3985b"}},"options":{}}}
+{"t":{"$date":"2023-03-15T08:44:30.485+00:00"},"s":"I",  "c":"NETWORK",  "id":23016,   "ctx":"listener","msg":"Waiting for connections","attr":{"port":27017,"ssl":"off"}}
+{"t":{"$date":"2023-03-15T08:44:30.500+00:00"},"s":"I",  "c":"INDEX",    "id":20345,   "ctx":"LogicalSessionCacheRefresh","msg":"Index build: done building","attr":{"buildUUID":null,"collectionUUID":{"uuid":{"$uuid":"069f8303-eb52-4db9-a5a7-3383e8b3985b"}},"namespace":"config.system.sessions","index":"_id_","ident":"index-5-6500416988991402873","collectionIdent":"collection-4-6500416988991402873","commitTimestamp":null}}
+{"t":{"$date":"2023-03-15T08:44:30.500+00:00"},"s":"I",  "c":"INDEX",    "id":20345,   "ctx":"LogicalSessionCacheRefresh","msg":"Index build: done building","attr":{"buildUUID":null,"collectionUUID":{"uuid":{"$uuid":"069f8303-eb52-4db9-a5a7-3383e8b3985b"}},"namespace":"config.system.sessions","index":"lsidTTLIndex","ident":"index-6-6500416988991402873","collectionIdent":"collection-4-6500416988991402873","commitTimestamp":null}}
+{"t":{"$date":"2023-03-15T08:46:55.287+00:00"},"s":"I",  "c":"CONTROL",  "id":23377,   "ctx":"SignalHandler","msg":"Received signal","attr":{"signal":15,"error":"Terminated"}}
+{"t":{"$date":"2023-03-15T08:46:55.288+00:00"},"s":"I",  "c":"CONTROL",  "id":23378,   "ctx":"SignalHandler","msg":"Signal was sent by kill(2)","attr":{"pid":0,"uid":0}}
+{"t":{"$date":"2023-03-15T08:46:55.288+00:00"},"s":"I",  "c":"CONTROL",  "id":23381,   "ctx":"SignalHandler","msg":"will terminate after current cmd ends"}
+{"t":{"$date":"2023-03-15T08:46:55.293+00:00"},"s":"I",  "c":"REPL",     "id":4784900, "ctx":"SignalHandler","msg":"Stepping down the ReplicationCoordinator for shutdown","attr":{"waitTimeMillis":15000}}
+{"t":{"$date":"2023-03-15T08:46:55.300+00:00"},"s":"I",  "c":"REPL",     "id":4794602, "ctx":"SignalHandler","msg":"Attempting to enter quiesce mode"}
+{"t":{"$date":"2023-03-15T08:46:55.301+00:00"},"s":"I",  "c":"-",        "id":6371601, "ctx":"SignalHandler","msg":"Shutting down the FLE Crud thread pool"}
+{"t":{"$date":"2023-03-15T08:46:55.301+00:00"},"s":"I",  "c":"COMMAND",  "id":4784901, "ctx":"SignalHandler","msg":"Shutting down the MirrorMaestro"}
+{"t":{"$date":"2023-03-15T08:46:55.301+00:00"},"s":"I",  "c":"SHARDING", "id":4784902, "ctx":"SignalHandler","msg":"Shutting down the WaitForMajorityService"}
+{"t":{"$date":"2023-03-15T08:46:55.341+00:00"},"s":"I",  "c":"CONTROL",  "id":4784903, "ctx":"SignalHandler","msg":"Shutting down the LogicalSessionCache"}
+{"t":{"$date":"2023-03-15T08:46:55.350+00:00"},"s":"I",  "c":"NETWORK",  "id":20562,   "ctx":"SignalHandler","msg":"Shutdown: going to close listening sockets"}
+{"t":{"$date":"2023-03-15T08:46:55.352+00:00"},"s":"I",  "c":"NETWORK",  "id":23017,   "ctx":"listener","msg":"removing socket file","attr":{"path":"/tmp/mongodb-27017.sock"}}
+{"t":{"$date":"2023-03-15T08:46:55.353+00:00"},"s":"I",  "c":"NETWORK",  "id":4784905, "ctx":"SignalHandler","msg":"Shutting down the global connection pool"}
+{"t":{"$date":"2023-03-15T08:46:55.353+00:00"},"s":"I",  "c":"CONTROL",  "id":4784906, "ctx":"SignalHandler","msg":"Shutting down the FlowControlTicketholder"}
+{"t":{"$date":"2023-03-15T08:46:55.353+00:00"},"s":"I",  "c":"-",        "id":20520,   "ctx":"SignalHandler","msg":"Stopping further Flow Control ticket acquisitions."}
+{"t":{"$date":"2023-03-15T08:46:55.354+00:00"},"s":"I",  "c":"CONTROL",  "id":4784908, "ctx":"SignalHandler","msg":"Shutting down the PeriodicThreadToAbortExpiredTransactions"}
+{"t":{"$date":"2023-03-15T08:46:55.354+00:00"},"s":"I",  "c":"REPL",     "id":4784909, "ctx":"SignalHandler","msg":"Shutting down the ReplicationCoordinator"}
+{"t":{"$date":"2023-03-15T08:46:55.354+00:00"},"s":"I",  "c":"SHARDING", "id":4784910, "ctx":"SignalHandler","msg":"Shutting down the ShardingInitializationMongoD"}
+{"t":{"$date":"2023-03-15T08:46:55.355+00:00"},"s":"I",  "c":"REPL",     "id":4784911, "ctx":"SignalHandler","msg":"Enqueuing the ReplicationStateTransitionLock for shutdown"}
+{"t":{"$date":"2023-03-15T08:46:55.355+00:00"},"s":"I",  "c":"-",        "id":4784912, "ctx":"SignalHandler","msg":"Killing all operations for shutdown"}
+{"t":{"$date":"2023-03-15T08:46:55.356+00:00"},"s":"I",  "c":"-",        "id":4695300, "ctx":"SignalHandler","msg":"Interrupted all currently running operations","attr":{"opsKilled":3}}
+{"t":{"$date":"2023-03-15T08:46:55.356+00:00"},"s":"I",  "c":"TENANT_M", "id":5093807, "ctx":"SignalHandler","msg":"Shutting down all TenantMigrationAccessBlockers on global shutdown"}
+{"t":{"$date":"2023-03-15T08:46:55.356+00:00"},"s":"I",  "c":"COMMAND",  "id":4784913, "ctx":"SignalHandler","msg":"Shutting down all open transactions"}
+{"t":{"$date":"2023-03-15T08:46:55.356+00:00"},"s":"I",  "c":"REPL",     "id":4784914, "ctx":"SignalHandler","msg":"Acquiring the ReplicationStateTransitionLock for shutdown"}
+{"t":{"$date":"2023-03-15T08:46:55.356+00:00"},"s":"I",  "c":"INDEX",    "id":4784915, "ctx":"SignalHandler","msg":"Shutting down the IndexBuildsCoordinator"}
+{"t":{"$date":"2023-03-15T08:46:55.357+00:00"},"s":"I",  "c":"NETWORK",  "id":4784918, "ctx":"SignalHandler","msg":"Shutting down the ReplicaSetMonitor"}
+{"t":{"$date":"2023-03-15T08:46:55.358+00:00"},"s":"I",  "c":"SHARDING", "id":4784921, "ctx":"SignalHandler","msg":"Shutting down the MigrationUtilExecutor"}
+{"t":{"$date":"2023-03-15T08:46:55.360+00:00"},"s":"I",  "c":"ASIO",     "id":22582,   "ctx":"MigrationUtil-TaskExecutor","msg":"Killing all outstanding egress activity."}
+{"t":{"$date":"2023-03-15T08:46:55.360+00:00"},"s":"I",  "c":"COMMAND",  "id":4784923, "ctx":"SignalHandler","msg":"Shutting down the ServiceEntryPoint"}
+{"t":{"$date":"2023-03-15T08:46:55.361+00:00"},"s":"I",  "c":"CONTROL",  "id":4784925, "ctx":"SignalHandler","msg":"Shutting down free monitoring"}
+{"t":{"$date":"2023-03-15T08:46:55.361+00:00"},"s":"I",  "c":"CONTROL",  "id":20609,   "ctx":"SignalHandler","msg":"Shutting down free monitoring"}
+{"t":{"$date":"2023-03-15T08:46:55.361+00:00"},"s":"I",  "c":"CONTROL",  "id":4784927, "ctx":"SignalHandler","msg":"Shutting down the HealthLog"}
+{"t":{"$date":"2023-03-15T08:46:55.362+00:00"},"s":"I",  "c":"CONTROL",  "id":4784928, "ctx":"SignalHandler","msg":"Shutting down the TTL monitor"}
+{"t":{"$date":"2023-03-15T08:46:55.362+00:00"},"s":"I",  "c":"INDEX",    "id":3684100, "ctx":"SignalHandler","msg":"Shutting down TTL collection monitor thread"}
+{"t":{"$date":"2023-03-15T08:46:55.362+00:00"},"s":"I",  "c":"INDEX",    "id":3684101, "ctx":"SignalHandler","msg":"Finished shutting down TTL collection monitor thread"}
+{"t":{"$date":"2023-03-15T08:46:55.362+00:00"},"s":"I",  "c":"CONTROL",  "id":6278511, "ctx":"SignalHandler","msg":"Shutting down the Change Stream ExpiredPre-images Remover"}
+{"t":{"$date":"2023-03-15T08:46:55.363+00:00"},"s":"I",  "c":"CONTROL",  "id":4784929, "ctx":"SignalHandler","msg":"Acquiring the global lock for shutdown"}
+{"t":{"$date":"2023-03-15T08:46:55.363+00:00"},"s":"I",  "c":"CONTROL",  "id":4784930, "ctx":"SignalHandler","msg":"Shutting down the storage engine"}
+{"t":{"$date":"2023-03-15T08:46:55.363+00:00"},"s":"I",  "c":"STORAGE",  "id":22320,   "ctx":"SignalHandler","msg":"Shutting down journal flusher thread"}
+{"t":{"$date":"2023-03-15T08:46:55.364+00:00"},"s":"I",  "c":"STORAGE",  "id":22321,   "ctx":"SignalHandler","msg":"Finished shutting down journal flusher thread"}
+{"t":{"$date":"2023-03-15T08:46:55.364+00:00"},"s":"I",  "c":"STORAGE",  "id":22322,   "ctx":"SignalHandler","msg":"Shutting down checkpoint thread"}
+{"t":{"$date":"2023-03-15T08:46:55.364+00:00"},"s":"I",  "c":"STORAGE",  "id":22323,   "ctx":"SignalHandler","msg":"Finished shutting down checkpoint thread"}
+{"t":{"$date":"2023-03-15T08:46:55.365+00:00"},"s":"I",  "c":"STORAGE",  "id":20282,   "ctx":"SignalHandler","msg":"Deregistering all the collections"}
+{"t":{"$date":"2023-03-15T08:46:55.369+00:00"},"s":"I",  "c":"STORAGE",  "id":22261,   "ctx":"SignalHandler","msg":"Timestamp monitor shutting down"}
+{"t":{"$date":"2023-03-15T08:46:55.370+00:00"},"s":"I",  "c":"STORAGE",  "id":22317,   "ctx":"SignalHandler","msg":"WiredTigerKVEngine shutting down"}
+{"t":{"$date":"2023-03-15T08:46:55.371+00:00"},"s":"I",  "c":"STORAGE",  "id":22318,   "ctx":"SignalHandler","msg":"Shutting down session sweeper thread"}
+{"t":{"$date":"2023-03-15T08:46:55.371+00:00"},"s":"I",  "c":"STORAGE",  "id":22319,   "ctx":"SignalHandler","msg":"Finished shutting down session sweeper thread"}
+{"t":{"$date":"2023-03-15T08:46:55.372+00:00"},"s":"I",  "c":"STORAGE",  "id":4795902, "ctx":"SignalHandler","msg":"Closing WiredTiger","attr":{"closeConfig":"leak_memory=true,"}}
+{"t":{"$date":"2023-03-15T08:46:55.406+00:00"},"s":"I",  "c":"STORAGE",  "id":4795901, "ctx":"SignalHandler","msg":"WiredTiger closed","attr":{"durationMillis":34}}
+{"t":{"$date":"2023-03-15T08:46:55.406+00:00"},"s":"I",  "c":"STORAGE",  "id":22279,   "ctx":"SignalHandler","msg":"shutdown: removing fs lock..."}
+{"t":{"$date":"2023-03-15T08:46:55.407+00:00"},"s":"I",  "c":"-",        "id":4784931, "ctx":"SignalHandler","msg":"Dropping the scope cache for shutdown"}
+{"t":{"$date":"2023-03-15T08:46:55.407+00:00"},"s":"I",  "c":"FTDC",     "id":20626,   "ctx":"SignalHandler","msg":"Shutting down full-time diagnostic datacapture"}
+{"t":{"$date":"2023-03-15T08:46:55.415+00:00"},"s":"I",  "c":"CONTROL",  "id":20565,   "ctx":"SignalHandler","msg":"Now exiting"}
+{"t":{"$date":"2023-03-15T08:46:55.419+00:00"},"s":"I",  "c":"CONTROL",  "id":23138,   "ctx":"SignalHandler","msg":"Shutting down","attr":{"exitCode":0}}
+mohit030802@LAPTOP-IH74LK2B:~$ docker logs
+"docker logs" requires exactly 1 argument.
+See 'docker logs --help'.
+
+Usage:  docker logs [OPTIONS] CONTAINER
+
+Fetch the logs of a container
+mohit030802@LAPTOP-IH74LK2B:~$ ls
+ company.txt
+ folder
+'imgres?imgurl=https:%2F%2Fnofilmschool.com%2Fsites%2Fdefault%2Ffiles%2Fstyles%2Ffacebook%2Fpublic%2Fscreen_shot_2018-11-19_at_8.00.19_am.png?itok=TFhIJhAh'
+ names.txt
+ project
+ sirname.txt
+ wget-log
+mohit030802@LAPTOP-IH74LK2B:~$ docker container prune -f
+Deleted Containers:
+37df8436b68a956adb66ab2be80025fd61d17a7072439dcdff64def99defa565
+573aec86736bc0c2837ea399e20f7f2891846436d465e0e86ab858bdbe4dae53
+a5e69eaed787f368dfdccafc733a5b92fe8f1aff2f9e56c418b419a58e23056c
+fe2eec102fd0645315951ba517cadda1e083bdb44b4e32865a06110ebc36cb4e
+168f934aa16f41f87a93001818319f31c5dfb5418bcd4b79418680a93bc00140
+ffb23add6c8fca9a3b4861e6c0430e62e6ad8cfb4d817f29e8dfea0d65354683
+d9ba046954b3f483457a19b67845b13180b00ed13fc89995fd2a343bbbe1c250
+b9fc1df1f2780c1273bbcf4d65f2b65057f82cc5298af92e12b8780e8032a363
+0334db71510d9a7d1fb9166d16745c5e70f05de674ac78aaba2e09ca00075f57
+b53cb5af7162dd68e113b4ef2381dce6e8ac37a456b5d8526ff691d68fcdee8c
+3ed205e1c28da50e4b4dbb157cf76888440307ce6513d83e044cc6d92aa64cda
+d18a32e02de46c6d135b090442bb424a01e29a94162aba94faf3673c84208282
+3f8facd1b1caab2f6e402ebd6bfd1a05841bb31fde0eb7e908e14b52ca89e6b3
+52212b5b9bc7423abeb88958a20ff179fe041b31b224a41fa9b62b318b409d41
+d2a353970cc849aa63b4f65060922004b53fd8797bb00d8aa19d31fa183acbf1
+d3d2f98dde16ec1eb5b928754e196698961ca7543f478395b8deec4ad8a900ab
+
+Total reclaimed space: 216B
+mohit030802@LAPTOP-IH74LK2B:~$ docker ps -a
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+mohit030802@LAPTOP-IH74LK2B:~$ docker run alpine ping civo.com
+Unable to find image 'alpine:latest' locally
+latest: Pulling from library/alpine
+63b65145d645: Pull complete
+Digest: sha256:ff6bdca1701f3a8a67e328815ff2346b0e4067d32ec36b7992c1fdc001dc8517
+Status: Downloaded newer image for alpine:latest
+PING civo.com (34.105.222.154): 56 data bytes
+64 bytes from 34.105.222.154: seq=0 ttl=36 time=376.782 ms
+64 bytes from 34.105.222.154: seq=1 ttl=36 time=271.472 ms
+64 bytes from 34.105.222.154: seq=2 ttl=36 time=271.168 ms
+64 bytes from 34.105.222.154: seq=3 ttl=36 time=276.172 ms
+64 bytes from 34.105.222.154: seq=4 ttl=36 time=269.160 ms
+64 bytes from 34.105.222.154: seq=5 ttl=36 time=268.834 ms
+64 bytes from 34.105.222.154: seq=6 ttl=36 time=270.510 ms
+64 bytes from 34.105.222.154: seq=7 ttl=36 time=273.969 ms
+64 bytes from 34.105.222.154: seq=8 ttl=36 time=283.985 ms
+64 bytes from 34.105.222.154: seq=9 ttl=36 time=270.530 ms
+64 bytes from 34.105.222.154: seq=10 ttl=36 time=274.879 ms
+64 bytes from 34.105.222.154: seq=11 ttl=36 time=274.704 ms
+64 bytes from 34.105.222.154: seq=12 ttl=36 time=271.202 ms
+64 bytes from 34.105.222.154: seq=13 ttl=36 time=269.542 ms
+64 bytes from 34.105.222.154: seq=14 ttl=36 time=270.895 ms
+64 bytes from 34.105.222.154: seq=15 ttl=36 time=271.384 ms
+64 bytes from 34.105.222.154: seq=16 ttl=36 time=271.628 ms
+64 bytes from 34.105.222.154: seq=17 ttl=36 time=270.536 ms
+64 bytes from 34.105.222.154: seq=18 ttl=36 time=271.368 ms
+64 bytes from 34.105.222.154: seq=19 ttl=36 time=272.636 ms
+64 bytes from 34.105.222.154: seq=20 ttl=36 time=273.754 ms
+64 bytes from 34.105.222.154: seq=21 ttl=36 time=275.455 ms
+64 bytes from 34.105.222.154: seq=22 ttl=36 time=295.918 ms
+64 bytes from 34.105.222.154: seq=23 ttl=36 time=272.921 ms
+64 bytes from 34.105.222.154: seq=24 ttl=36 time=274.726 ms
+64 bytes from 34.105.222.154: seq=25 ttl=36 time=274.752 ms
+64 bytes from 34.105.222.154: seq=26 ttl=36 time=275.789 ms
+64 bytes from 34.105.222.154: seq=27 ttl=36 time=271.735 ms
+64 bytes from 34.105.222.154: seq=28 ttl=36 time=271.494 ms
+64 bytes from 34.105.222.154: seq=29 ttl=36 time=276.709 ms
+64 bytes from 34.105.222.154: seq=30 ttl=36 time=270.542 ms
+64 bytes from 34.105.222.154: seq=31 ttl=36 time=272.999 ms
+64 bytes from 34.105.222.154: seq=32 ttl=36 time=320.570 ms
+64 bytes from 34.105.222.154: seq=33 ttl=36 time=271.097 ms
+64 bytes from 34.105.222.154: seq=34 ttl=36 time=275.703 ms
+64 bytes from 34.105.222.154: seq=35 ttl=36 time=269.173 ms
+64 bytes from 34.105.222.154: seq=36 ttl=36 time=273.541 ms
+64 bytes from 34.105.222.154: seq=37 ttl=36 time=272.104 ms
+64 bytes from 34.105.222.154: seq=38 ttl=36 time=269.672 ms
+64 bytes from 34.105.222.154: seq=39 ttl=36 time=292.094 ms
+mohit030802@LAPTOP-IH74LK2B:~$ docker run -d alpine ping civo.com
+a8c7bbd7566aa2fbec4e2a32a2d665d274a960b4376732fc46c8860fb468c6e7
+mohit030802@LAPTOP-IH74LK2B:~$ docker run ubuntu echo hey
+hey
+mohit030802@LAPTOP-IH74LK2B:~$ docker run -it ubuntu
+root@38c0d30c5e4f:/# touch index.txt
+root@38c0d30c5e4f:/# echo "Hey mmy name is mohit" >> index.txt
+root@38c0d30c5e4f:/# ls
+bin  boot  dev  etc  home  index.txt  lib  lib32  lib64  libx32  media  mnt  opt  proc  root  run  sbin  srv  sys  tmp  usr  var
+root@38c0d30c5e4f:/# cat index.txt
+Hey mmy name is mohit
+root@38c0d30c5e4f:/# exit
+exit
+mohit030802@LAPTOP-IH74LK2B:~$ docker start 38c0d30c5e4f
+38c0d30c5e4f
+mohit030802@LAPTOP-IH74LK2B:~$ docker exec -it 38c0d30c5e4f bash
+root@38c0d30c5e4f:/#  ls
+bin  boot  dev  etc  home  index.txt  lib  lib32  lib64  libx32  media  mnt  opt  proc  root  run  sbin  srv  sys  tmp  usr  var
+root@38c0d30c5e4f:/# exit
+exit
+mohit030802@LAPTOP-IH74LK2B:~$ docker commit -m "added index.txt" 38c0d30c5e4f index_ubuntu:1.01
+sha256:2a689353acbb1bada085702cad045718a6b00aacbd946f065f107af3a507a818
+mohit030802@LAPTOP-IH74LK2B:~$ docker images
+REPOSITORY     TAG       IMAGE ID       CREATED         SIZE
+index_ubuntu   1.01      2a689353acbb   6 seconds ago   77.8MB
+mysql          latest    4073e6a6f542   6 days ago      530MB
+mongo          latest    dcfda10b61c5   11 days ago     645MB
+ubuntu         latest    74f2314a03de   2 weeks ago     77.8MB
+alpine         latest    b2aa39c304c2   4 weeks ago     7.05MB
+hello-world    latest    feb5d9fea6a5   17 months ago   13.3kB
+myimage        latest    66fab739cecb   18 months ago   135MB
+ubuntu         16.04     b6f507652425   18 months ago   135MB
+mohit030802@LAPTOP-IH74LK2B:~$ docker run -it index_ubuntu:1.01
+root@b270d6587654:/# ls
+bin  boot  dev  etc  home  index.txt  lib  lib32  lib64  libx32  media  mnt  opt  proc  root  run  sbin  srv  sys  tmp  usr  var
+root@b270d6587654:/# cat index.txt
+Hey mmy name is mohit
+root@b270d6587654:/# ezit
+bash: ezit: command not found
+root@b270d6587654:/# docker images -q
+bash: docker: command not found
+root@b270d6587654:/# exit
+exit
+mohit030802@LAPTOP-IH74LK2B:~$ docker images -q
+2a689353acbb
+4073e6a6f542
+dcfda10b61c5
+74f2314a03de
+b2aa39c304c2
+feb5d9fea6a5
+66fab739cecb
+b6f507652425
+mohit030802@LAPTOP-IH74LK2B:~$ touch Dockerfile
+mohit030802@LAPTOP-IH74LK2B:~$ vi Dockerfile
+mohit030802@LAPTOP-IH74LK2B:~$ cat Dockerfile
+FROM ubuntu
+MAINTAINER Mohit <mohitom2002@gmail.com>
+RUN apt-get update
+CMD ["echo","Hello World"]
+
+
+mohit030802@LAPTOP-IH74LK2B:~$ docker login
+Authenticating with existing credentials...
+Login Succeeded
+
+Logging in with your password grants your terminal complete access to your account.
+For better security, log in with a limited-privilege personal access token. Learn more at https://docs.docker.com/go/access-tokens/
+mohit030802@LAPTOP-IH74LK2B:~$ docker build -t myImage .
+invalid argument "myImage" for "-t, --tag" flag: invalid reference format: repository name must be lowercase
+See 'docker build --help'.
+mohit030802@LAPTOP-IH74LK2B:~$ docker build -t myimage .
+[+] Building 35.6s (5/5) FINISHED
+ => [internal] load build definition from Dockerfile                                                                                                   0.0s
+ => => transferring dockerfile: 144B                                                                                                                   0.0s
+ => [internal] load .dockerignore                                                                                                                      0.0s
+ => => transferring context: 2B                                                                                                                        0.0s
+ => [internal] load metadata for docker.io/library/ubuntu:latest                                                                                       0.0s
+ => [1/2] FROM docker.io/library/ubuntu                                                                                                                0.0s
+ => CANCELED [2/2] RUN apt-get update                                                                                                                 35.5s
+context canceled
+mohit030802@LAPTOP-IH74LK2B:~$ mkdir projec
+mohit030802@LAPTOP-IH74LK2B:~$ mv Dockerfile projec
+mohit030802@LAPTOP-IH74LK2B:~$ cd projec
+mohit030802@LAPTOP-IH74LK2B:~/projec$ docker build -t myimage .
+[+] Building 16.1s (6/6) FINISHED
+ => [internal] load build definition from Dockerfile                                                                                                   0.0s
+ => => transferring dockerfile: 37B                                                                                                                    0.0s
+ => [internal] load .dockerignore                                                                                                                      0.0s
+ => => transferring context: 2B                                                                                                                        0.0s
+ => [internal] load metadata for docker.io/library/ubuntu:latest                                                                                       0.0s
+ => CACHED [1/2] FROM docker.io/library/ubuntu                                                                                                         0.0s
+ => [2/2] RUN apt-get update                                                                                                                          15.8s
+ => exporting to image                                                                                                                                 0.2s
+ => => exporting layers                                                                                                                                0.2s
+ => => writing image sha256:bfa4b8c8c747354f17b78335f5334f86f6e8db10a6ff33fadcafeb79e9c65ded                                                           0.0s
+ => => naming to docker.io/library/myimage                                                                                                             0.0s
+
+Use 'docker scan' to run Snyk tests against images to find vulnerabilities and learn how to fix them
+mohit030802@LAPTOP-IH74LK2B:~/projec$ docker run -it myimage
+Hello World
+mohit030802@LAPTOP-IH74LK2B:~/projec$ cat Dockerfile
+FROM ubuntu
+MAINTAINER Mohit <mohitom2002@gmail.com>
+RUN apt-get update
+CMD ["echo","Hello World"]
+
+
+mohit030802@LAPTOP-IH74LK2B:~/projec$ cd ..
+mohit030802@LAPTOP-IH74LK2B:~$ docker images
+REPOSITORY     TAG       IMAGE ID       CREATED          SIZE
+myimage        latest    bfa4b8c8c747   2 minutes ago    120MB
+index_ubuntu   1.01      2a689353acbb   58 minutes ago   77.8MB
+mysql          latest    4073e6a6f542   6 days ago       530MB
+mongo          latest    dcfda10b61c5   11 days ago      645MB
+ubuntu         latest    74f2314a03de   2 weeks ago      77.8MB
+alpine         latest    b2aa39c304c2   4 weeks ago      7.05MB
+hello-world    latest    feb5d9fea6a5   17 months ago    13.3kB
+<none>         <none>    66fab739cecb   18 months ago    135MB
+ubuntu         16.04     b6f507652425   18 months ago    135MB
+mohit030802@LAPTOP-IH74LK2B:~$ docker images -q
+bfa4b8c8c747
+2a689353acbb
+4073e6a6f542
+dcfda10b61c5
+74f2314a03de
+b2aa39c304c2
+feb5d9fea6a5
+b6f507652425
+66fab739cecb
+mohit030802@LAPTOP-IH74LK2B:~$

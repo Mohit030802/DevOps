@@ -1,0 +1,73 @@
+Microsoft Windows [Version 10.0.22621.1265]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\ACER>docker ps
+CONTAINER ID   IMAGE     COMMAND       CREATED         STATUS         PORTS     NAMES
+573aec86736b   ubuntu    "/bin/bash"   6 seconds ago   Up 5 seconds             cool_lamport
+
+C:\Users\ACER>docker container exec -it 573aec86736b bash
+root@573aec86736b:/# exit
+exit
+
+C:\Users\ACER>docker container exec -it 573aec86736b bash
+Error response from daemon: Container 573aec86736bc0c2837ea399e20f7f2891846436d465e0e86ab858bdbe4dae53 is not running
+
+C:\Users\ACER>docker ps
+CONTAINER ID   IMAGE     COMMAND                  CREATED         STATUS         PORTS       NAMES
+37df8436b68a   mongo     "docker-entrypoint.s…"   2 minutes ago   Up 2 minutes   27017/tcp   upbeat_jones
+
+C:\Users\ACER>docker stop 37df8436b68a
+37df8436b68a
+
+C:\Users\ACER>docker ps
+CONTAINER ID   IMAGE     COMMAND           CREATED          STATUS          PORTS     NAMES
+fb0ab425d585   alpine    "ping civo.com"   12 seconds ago   Up 11 seconds             condescending_thompson
+
+C:\Users\ACER>docker stop fb0ab425d585
+fb0ab425d585
+
+C:\Users\ACER>docker ps
+CONTAINER ID   IMAGE     COMMAND           CREATED         STATUS         PORTS     NAMES
+a8c7bbd7566a   alpine    "ping civo.com"   5 seconds ago   Up 4 seconds             gifted_boyd
+
+C:\Users\ACER>docker stop a8c7bbd7566a
+a8c7bbd7566a
+
+C:\Users\ACER>docker ps
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+
+C:\Users\ACER>docker logs a8c7
+PING civo.com (34.105.222.154): 56 data bytes
+64 bytes from 34.105.222.154: seq=0 ttl=36 time=275.141 ms
+64 bytes from 34.105.222.154: seq=1 ttl=36 time=268.695 ms
+64 bytes from 34.105.222.154: seq=2 ttl=36 time=268.979 ms
+64 bytes from 34.105.222.154: seq=3 ttl=36 time=269.981 ms
+64 bytes from 34.105.222.154: seq=4 ttl=36 time=268.900 ms
+64 bytes from 34.105.222.154: seq=5 ttl=36 time=274.347 ms
+64 bytes from 34.105.222.154: seq=6 ttl=36 time=270.796 ms
+64 bytes from 34.105.222.154: seq=7 ttl=36 time=272.845 ms
+64 bytes from 34.105.222.154: seq=8 ttl=36 time=271.634 ms
+64 bytes from 34.105.222.154: seq=9 ttl=36 time=270.058 ms
+64 bytes from 34.105.222.154: seq=10 ttl=36 time=269.778 ms
+64 bytes from 34.105.222.154: seq=11 ttl=36 time=286.110 ms
+64 bytes from 34.105.222.154: seq=12 ttl=36 time=270.195 ms
+64 bytes from 34.105.222.154: seq=13 ttl=36 time=270.655 ms
+64 bytes from 34.105.222.154: seq=14 ttl=36 time=272.009 ms
+64 bytes from 34.105.222.154: seq=15 ttl=36 time=273.721 ms
+64 bytes from 34.105.222.154: seq=16 ttl=36 time=270.387 ms
+64 bytes from 34.105.222.154: seq=17 ttl=36 time=297.085 ms
+64 bytes from 34.105.222.154: seq=18 ttl=36 time=267.720 ms
+64 bytes from 34.105.222.154: seq=19 ttl=36 time=270.205 ms
+64 bytes from 34.105.222.154: seq=20 ttl=36 time=268.843 ms
+64 bytes from 34.105.222.154: seq=21 ttl=36 time=274.525 ms
+64 bytes from 34.105.222.154: seq=22 ttl=36 time=269.071 ms
+64 bytes from 34.105.222.154: seq=23 ttl=36 time=271.203 ms
+64 bytes from 34.105.222.154: seq=24 ttl=36 time=277.230 ms
+64 bytes from 34.105.222.154: seq=25 ttl=36 time=270.569 ms
+64 bytes from 34.105.222.154: seq=26 ttl=36 time=271.260 ms
+
+C:\Users\ACER>docker ps
+CONTAINER ID   IMAGE     COMMAND       CREATED          STATUS          PORTS     NAMES
+38c0d30c5e4f   ubuntu    "/bin/bash"   16 seconds ago   Up 15 seconds             dazzling_curran
+
+C:\Users\ACER>
